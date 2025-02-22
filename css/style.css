@@ -6,19 +6,13 @@
 body {
 	font-family: "Satoshi-Regular", sans-serif;
 	background-color: #161616;
-}
-div {
 	color: white;
-	text-align: center;
-	background-color: yellowgreen;
-	margin: 10px 0px;
 }
 #header {
 	display: flex;
 	justify-content: space-around;
 	height: 60px;
 	align-items: center;
-	color: white;
 }
 #header nav {
 	display: flex;
@@ -33,8 +27,28 @@ div {
 #header nav ul li {
 	list-style-type: none;
 }
-#main {
+#home {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	min-height: 85vh;
 	align-items: center;
+	flex-wrap: wrap;
+}
+#home div {
+	max-width: 550px;
+}
+#home div h1 {
+	font-size: 4em;
+}
+#home div p {
+	font-size: 1.5em;
+}
+#home img {
+	max-width: 275px;
+}
+/* MOBILE DEVICE */
+@media screen and (max-width: 600px) {
+	#home img {
+		order: -1;
+	}
 }
