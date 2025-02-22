@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Satoshi-Regular", sans-serif;
+	background-color: #161616;
+}
+div {
+	color: white;
+	text-align: center;
+	background-color: yellowgreen;
+	margin: 10px 0px;
+}
+#header {
+	display: flex;
+	justify-content: space-around;
+	height: 60px;
+	align-items: center;
+	color: white;
+}
+#header nav {
+	display: flex;
+	align-items: center;
+	min-width: 40%;
+}
+#header nav ul {
+	display: flex;
+	min-width: 100%;
+	justify-content: space-between;
+}
+#header nav ul li {
+	list-style-type: none;
+}
+#main {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
