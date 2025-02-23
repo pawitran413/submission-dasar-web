@@ -9,15 +9,30 @@ body {
 	color: white;
 }
 #header {
+	height: 70px;
+	background-color: #161616;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+#header div {
+	width: 100vw;
 	display: flex;
 	justify-content: space-around;
-	height: 60px;
-	align-items: center;
+}
+#header a {
+	text-decoration: none;
+	color: white;
 }
 #header nav {
 	display: flex;
 	align-items: center;
 	min-width: 40%;
+}
+#header i {
+	display: none;
 }
 #header nav ul {
 	display: flex;
@@ -27,28 +42,123 @@ body {
 #header nav ul li {
 	list-style-type: none;
 }
+#header nav ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 15px;
+	border: 1px solid transparent;
+	transition: border 0.3s ease;
+}
+#header nav ul li a:hover {
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 #home {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	min-height: 85vh;
+	min-width: 75vw;
 	align-items: center;
 	flex-wrap: wrap;
 }
 #home div {
 	max-width: 550px;
 }
-#home div h1 {
+.heading1 {
 	font-size: 4em;
 }
-#home div p {
+.paragraph {
 	font-size: 1.5em;
 }
 #home img {
 	max-width: 275px;
 }
+#berita {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+#berita div {
+	width: 75vw;
+	text-align: center;
+}
+.card_container {
+	display: flex;
+	gap: 20px;
+}
+.card {
+	height: auto;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	padding: 15px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	transition: border 0.3s ease;
+}
+.card:hover {
+	border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
 /* MOBILE DEVICE */
 @media screen and (max-width: 600px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#header {
+		width: 100vw;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+	}
+	#header div {
+		width: 80vw;
+		justify-content: space-between;
+	}
+	#header a h2 {
+		font-size: 0.9em;
+	}
+	#header nav {
+		display: none;
+	}
+	#header i {
+		display: block;
+	}
+	main {
+		gap: 20px;
+	}
+	#home {
+		justify-content: space-evenly;
+		min-height: 70vh;
+	}
+	#home div {
+		width: 80vw;
+		display: flex;
+		flex-direction: column;
+	}
+	.heading1 {
+		font-size: 2.2em;
+	}
+	.paragraph {
+		font-size: 1em;
+	}
 	#home img {
 		order: -1;
+		width: 50vw;
+	}
+	#berita div {
+		width: 80vw;
+		display: flex;
+		flex-direction: column;
 	}
 }
