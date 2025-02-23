@@ -9,6 +9,7 @@ body {
 	color: white;
 }
 #header {
+	/* width: 100vw; */
 	height: 70px;
 	background-color: #161616;
 	display: flex;
@@ -61,7 +62,7 @@ main {
 #home {
 	display: flex;
 	justify-content: space-between;
-	min-height: 85vh;
+	min-height: 90vh;
 	min-width: 75vw;
 	align-items: center;
 	flex-wrap: wrap;
@@ -70,19 +71,19 @@ main {
 	max-width: 550px;
 }
 .heading1 {
-	font-size: 4em;
+	font-size: 3.8em;
 }
 .paragraph {
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 #home img {
 	max-width: 275px;
 }
 #berita {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	min-height: 65vh;
 }
 #berita div {
 	width: 75vw;
@@ -107,6 +108,49 @@ main {
 .card:hover {
 	border: 1px solid rgba(255, 255, 255, 0.8);
 }
+main aside {
+	position: fixed;
+	inset-block: 0;
+	inset-inline-end: 0;
+}
+.social_media {
+	height: 100%;
+	display: flex;
+}
+.social_media ul {
+	padding: 1.5rem 1rem;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	margin: auto;
+	background-color: #161616;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	transition: border 0.3s ease;
+}
+.social_media ul:hover {
+	border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.social_media li {
+	list-style-type: none;
+}
+.social_media li a {
+	color: rgba(255, 255, 255, 0.3);
+	transition: color 0.3s ease;
+}
+.social_media li a:hover {
+	color: rgba(255, 255, 255, 1);
+}
+footer {
+	min-height: 15vh;
+	background-color: rgba(255, 255, 255, 0.05);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 /* MOBILE DEVICE */
 @media screen and (max-width: 600px) {
@@ -114,11 +158,11 @@ main {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		overflow-x: hidden;
 	}
 	#header {
 		width: 100vw;
 		height: 50px;
-		display: flex;
 		justify-content: center;
 	}
 	#header div {
@@ -160,5 +204,10 @@ main {
 		width: 80vw;
 		display: flex;
 		flex-direction: column;
+	}
+	footer {
+		width: 100vw;
+		margin-top: 30px;
+		padding: 0px 20px;
 	}
 }
