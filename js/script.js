@@ -1,28 +1,29 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navbar = document.querySelector('.nav-contain');
 
-/* Menu show */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
-}
+    navToggle.addEventListener('click', () => {
+        navbar.classList.toggle('nav-open');
+    });
 
-/* Menu hidden */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
+    document.addEventListener('click', (e) => {
+        const isClickInsideNav = navbar.contains(e.target);
+        const isClickOnToggle = navToggle.contains(e.target); // ✅ Tambahkan ini!
 
-/*=========== REMOVE MENU MOBILE ===========*/
-const navLink = document.querySelectorAll('.nav__link')
-
-const linkAction = () =>{
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+        if (!isClickInsideNav && !isClickOnToggle && navbar.classList.contains('nav-open')) {
+            navbar.classList.remove('nav-open');
+        }
+    });
+    // Close menu when clicking a nav link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('nav-open');
+            
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            link.classList.add('active');
+        });
+    });
+});
