@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const line = document.querySelector('.line');
     const linee = document.querySelector('.linee');
     const lineee = document.querySelector('.lineee');
+    const main = document.querySelector('.main');
 
     navToggle.addEventListener('click', () => {
         navbar.classList.toggle('nav-open');
         line.classList.toggle('nav-open');
         linee.classList.toggle('nav-open');
         lineee.classList.toggle('nav-open');
+        main.classList.toggle('nav-open');
     });
     
     document.addEventListener('click', (e) => {
