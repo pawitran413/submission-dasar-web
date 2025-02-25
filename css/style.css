@@ -34,10 +34,7 @@ body {
 	align-items: center;
 	min-width: 50%;
 }
-#header button {
-	display: none;
-}
-#tombol {
+.nav-toggle {
 	display: none;
 }
 #nav_list {
@@ -213,26 +210,22 @@ footer {
 	}
 	#header {
 		width: 100vw;
-		height: 50px;
+		height: 60px;
 		justify-content: center;
 	}
 	#header a h2 {
-		font-size: 0.9em;
+		font-size: 1em;
 	}
 	/* #header nav {
 		display: none;
 	} */
-	#header button {
+	/* #header button {
 		background-color: transparent;
 		padding: 5px;
 		border: none;
 		cursor: pointer;
 		display: block;
-	}
-	#tombol {
-		display: block;
-		color: white;
-	}
+	} */
 	.header {
 		display: flex;
 		width: 80vw;
@@ -257,10 +250,34 @@ footer {
 		width: 100%;
 		flex-direction: column;
 		text-align: center;
-		gap: 20px;
-		padding: 15px 0px;
+		gap: 30px;
+		padding: 20px 0px;
 		background-color: #161616;
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+	.nav-toggle {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		background-color: transparent;
+		border: none;
+	}
+	.line,
+	.linee,
+	.lineee {
+		background-color: white;
+		width: 23px;
+		height: 2px;
+		transition: all 0.3s ease;
+	}
+	.line.nav-open {
+		transform: translateY(6px) rotate(-45deg);
+	}
+	.linee.nav-open {
+		opacity: 0;
+	}
+	.lineee.nav-open {
+		transform: translateY(-6px) rotate(45deg);
 	}
 	main {
 		gap: 20px;

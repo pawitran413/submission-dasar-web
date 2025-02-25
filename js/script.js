@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
+    const line = document.querySelector('.line');
+    const linee = document.querySelector('.linee');
+    const lineee = document.querySelector('.lineee');
     const navbar = document.querySelector('.nav-contain');
 
     navToggle.addEventListener('click', () => {
         navbar.classList.toggle('nav-open');
+        line.classList.toggle('nav-open');
+        linee.classList.toggle('nav-open');
+        lineee.classList.toggle('nav-open');
     });
 
     document.addEventListener('click', (e) => {
