@@ -1,43 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Pilih elemen
     const navToggle = document.querySelector('.nav-toggle');
     const navbar = document.querySelector('.nav-contain');
-    const line = document.querySelector('.line');
-    const linee = document.querySelector('.linee');
-    const lineee = document.querySelector('.lineee');
+    const lines = document.querySelectorAll('.line, .linee, .lineee'); // Gabungkan selektor untuk garis
     const main = document.querySelector('.main');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    navToggle.addEventListener('click', () => {
-        navbar.classList.toggle('nav-open');
-        line.classList.toggle('nav-open');
-        linee.classList.toggle('nav-open');
-        lineee.classList.toggle('nav-open');
-        main.classList.toggle('nav-open');
-    });
-    
+    // Fungsi untuk menutup navbar
+    const closeNav = () => {
+        navbar.classList.remove('nav-open');
+        lines.forEach(line => line.classList.remove('nav-open'));
+        main.classList.remove('nav-open');
+    };
+
+    // Toggle navbar saat tombol toggle diklik
+    if (navToggle && navbar && lines.length > 0 && main) {
+        navToggle.addEventListener('click', () => {
+            navbar.classList.toggle('nav-open');
+            lines.forEach(line => line.classList.toggle('nav-open'));
+            main.classList.toggle('nav-open');
+        });
+    }
+
+    // Tutup navbar saat klik di luar navbar atau tombol toggle
     document.addEventListener('click', (e) => {
         const isClickInsideNav = navbar.contains(e.target);
-        const isClickOnToggle = navToggle.contains(e.target); // ✅ Tambahkan ini!
-        
+        const isClickOnToggle = navToggle.contains(e.target);
+
         if (!isClickInsideNav && !isClickOnToggle && navbar.classList.contains('nav-open')) {
-            navbar.classList.remove('nav-open');
-            line.classList.remove('nav-open');
-            linee.classList.remove('nav-open');
-            lineee.classList.remove('nav-open');
+            closeNav();
         }
     });
-    // Close menu when clicking a nav link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navbar.classList.remove('nav-open');
-            line.classList.remove('nav-open');
-            linee.classList.remove('nav-open');
-            lineee.classList.remove('nav-open');
-            
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Add active class to clicked link
-            link.classList.add('active');
+
+    // Tutup navbar dan atur class active saat nav link diklik
+    if (navLinks.length > 0) {
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-link')) {
+                closeNav();
+
+                // Hapus class active dari semua nav link
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Tambahkan class active ke nav link yang diklik
+                e.target.classList.add('active');
+            }
         });
-    });
+    }
 });
