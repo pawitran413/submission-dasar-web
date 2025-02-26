@@ -20,6 +20,7 @@ body {
 	top: 0;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	z-index: 5;
 }
 
 .header {
@@ -160,6 +161,18 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+/* ANIMASI SCROLL */
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* TAB */
