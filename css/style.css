@@ -156,6 +156,15 @@ main aside .text-aside {
 	gap: 10px;
 }
 
+.main {
+	background-color: #161616;
+	transition: opacity 0.5s ease;
+}
+
+.main.nav-open {
+	opacity: 0.2;
+}
+
 footer {
 	min-height: 15vh;
 	background-color: rgba(255, 255, 255, 0.05);

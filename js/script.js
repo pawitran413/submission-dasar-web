@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.nav-contain');
     const lines = document.querySelectorAll('.line, .linee, .lineee');
     const navLinks = document.querySelectorAll('.nav-link');
+    const main = document.querySelector('.main');
 
     // Fungsi untuk menutup navbar
     const closeNav = () => {
         navbar.classList.remove('nav-open');
+        main.classList.remove('nav-open');
         lines.forEach(line => line.classList.remove('nav-open'));
     };
 
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle && navbar && lines.length > 0) {
         navToggle.addEventListener('click', () => {
             navbar.classList.toggle('nav-open');
+            main.classList.toggle('nav-open');
             lines.forEach(line => line.classList.toggle('nav-open'));
         });
     }
@@ -28,21 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeNav();
         }
     });
-
-    // Tutup navbar dan atur class active saat nav link diklik
-    if (navLinks.length > 0) {
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('nav-link')) {
-                closeNav();
-
-                // Hapus class active dari semua nav link
-                navLinks.forEach(link => link.classList.remove('active'));
-
-                // Tambahkan class active ke nav link yang diklik
-                e.target.classList.add('active');
-            }
-        });
-    }
 });
 
 // ANIMASI SAAT SCROLL
