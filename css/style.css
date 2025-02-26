@@ -33,6 +33,7 @@ body {
 #header a {
 	text-decoration: none;
 	color: white;
+	z-index: 4;
 }
 
 .navbar {
@@ -178,17 +179,17 @@ footer {
 /* TAB */
 @media screen and (min-width: 600px) and (max-width: 1000px) {
 	.nav-contain {
-		top: 50px;
-		left: 100vw;
+		top: -500px;
+		left: 0px;
 		position: absolute;
+		opacity: 0;
 		width: 100vw;
-		opacity: 0%;
 		transition: all 0.5s ease;
 	}
 
 	.nav-contain.nav-open {
-		left: 0vw;
-		opacity: 100%;
+		opacity: 1;
+		top: 50px;
 	}
 
 	#nav_list {
