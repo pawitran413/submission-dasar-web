@@ -1,24 +1,21 @@
+// JavaScript untuk Navbar
 document.addEventListener('DOMContentLoaded', () => {
-    // Pilih elemen
     const navToggle = document.querySelector('.nav-toggle');
     const navbar = document.querySelector('.nav-contain');
-    const lines = document.querySelectorAll('.line, .linee, .lineee'); // Gabungkan selektor untuk garis
-    const main = document.querySelector('.main');
+    const lines = document.querySelectorAll('.line, .linee, .lineee');
     const navLinks = document.querySelectorAll('.nav-link');
 
     // Fungsi untuk menutup navbar
     const closeNav = () => {
         navbar.classList.remove('nav-open');
         lines.forEach(line => line.classList.remove('nav-open'));
-        main.classList.remove('nav-open');
     };
 
     // Toggle navbar saat tombol toggle diklik
-    if (navToggle && navbar && lines.length > 0 && main) {
+    if (navToggle && navbar && lines.length > 0) {
         navToggle.addEventListener('click', () => {
             navbar.classList.toggle('nav-open');
             lines.forEach(line => line.classList.toggle('nav-open'));
-            main.classList.toggle('nav-open');
         });
     }
 
