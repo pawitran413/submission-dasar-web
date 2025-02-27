@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
             closeNav();
         }
     });
+
+    // Tutup navbar saat .nav-link diklik
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
+        });
+    });
 });
 
 // ANIMASI SAAT SCROLL
