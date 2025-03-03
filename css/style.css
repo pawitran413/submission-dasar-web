@@ -96,6 +96,20 @@ body {
 	align-items: center;
 }
 
+.container {
+	width: 60vw;
+	margin: 50px 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.container img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+
 #home {
 	display: flex;
 	justify-content: space-between;
@@ -111,6 +125,10 @@ body {
 
 .heading1 {
 	font-size: 3.8em;
+}
+
+.heading2 {
+	font-size: 3em;
 }
 
 .paragraph {
@@ -137,6 +155,10 @@ body {
 	display: flex;
 	justify-content: center;
 	gap: 20px;
+}
+
+a {
+	text-decoration: none;
 }
 
 .card {
@@ -381,6 +403,20 @@ footer {
 	main aside {
 		gap: 30px;
 	}
+
+	.container {
+		width: 70vw;
+		margin: 50px 0px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.container img {
+		width: 100%;
+		height: 230px;
+		object-fit: cover;
+	}
 }
 
 /* HANDPHONE */
@@ -549,5 +585,23 @@ footer {
 		width: 100vw;
 		margin-top: 30px;
 		padding: 0 20px;
+	}
+
+	.heading2 {
+		font-size: 2em;
+	}
+
+	.container {
+		width: 75vw;
+		margin: 50px 0px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.container img {
+		width: 100%;
+		height: 170px;
+		object-fit: cover;
 	}
 }
