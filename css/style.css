@@ -59,14 +59,39 @@ body {
 .nav-link {
 	text-decoration: none;
 	color: white;
-	padding: 5px 15px;
-	border-radius: 15px;
-	border: 1px solid transparent;
-	transition: border 0.3s ease;
+	margin: 0px 10px;
+	padding: 5px 5px;
+	border-bottom: 1px solid transparent;
+	transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.fas {
+	margin: 5px 0px;
+	transform: scale(0.7);
+}
+
+.dropdown-menu {
+	display: none; /* Awalnya disembunyikan */
+	position: absolute;
+	background-color: #161616;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	list-style: none;
+	border-radius: 5px;
+}
+
+.dropdown-menu li a {
+	margin: 7px 20px;
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
 }
 
 .main {
@@ -147,7 +172,7 @@ body {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
-
+/* 
 main aside {
 	min-width: 40vw;
 	display: flex;
@@ -168,7 +193,7 @@ main aside .text-aside {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-}
+} */
 
 .main {
 	background-color: #161616;
@@ -178,7 +203,50 @@ main aside .text-aside {
 .main.nav-open {
 	opacity: 0.2;
 }
+/* EMAGZ START */
+.emagz {
+	/* min-height: 680px; */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 75vw;
+	margin: 30px 0px;
+}
 
+.emagz .emagz-slide {
+	width: 420px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.emagz .emagz-slide #halamanAktif {
+	color: white;
+}
+
+.emagz .emagz-slide .container-gambar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.emagz .emagz-slide .container-gambar .prev,
+.next {
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	cursor: pointer;
+}
+
+.emagz .emagz-slide .container-gambar img {
+	height: 600px;
+	margin: 10px;
+}
+/* EMAGZ END */
 footer {
 	min-height: 15vh;
 	background-color: rgba(255, 255, 255, 0.05);
@@ -269,6 +337,12 @@ footer {
 
 	.card:last-child {
 		display: none;
+	}
+
+	.emagz {
+		justify-content: center;
+		text-align: center;
+		gap: 20px;
 	}
 
 	main aside {
@@ -382,7 +456,33 @@ footer {
 		display: flex;
 		flex-direction: column;
 	}
+	/* EMAGZ START */
+	.emagz {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px; /* kalo udah ada bawahnya, ilangin */
+	}
 
+	.emagz .teks-emagz a {
+		display: none;
+	}
+
+	.emagz .emagz-slide .container-gambar .prev {
+		padding-left: 30px;
+	}
+
+	.emagz .emagz-slide .container-gambar .next {
+		padding-right: 30px;
+	}
+
+	.emagz .emagz-slide .container-gambar img {
+		max-height: 70vh;
+	}
+	/* EMAGZ END */
 	main aside {
 		flex-direction: column;
 		gap: 15px;

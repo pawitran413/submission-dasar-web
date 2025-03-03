@@ -10,7 +10,7 @@
 
 		<!-- ICON -->
 		<link
-			href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+			href="https://cdn.jsdelivr.net/npm/zremixicon@4.5.0/fonts/remixicon.css"
 			rel="stylesheet"
 		/>
 
@@ -44,9 +44,17 @@
 					<div class="navbar">
 						<ul id="nav_list">
 							<li><a href="#home" class="nav-link">Beranda</a></li>
-							<li><a href="#berita" class="nav-link">Berita</a></li>
+							<li class="dropdown">
+								<a href="#berita" class="nav-link nav-berita"
+									>Informasi <i class="fas fa-chevron-down"></i
+								></a>
+								<ul class="dropdown-menu">
+									<li><a href="" class="nav-link">Berita</a></li>
+									<li><a href="" class="nav-link">Database</a></li>
+								</ul>
+							</li>
 							<li><a href="#" class="nav-link">Emagz</a></li>
-							<li><a href="#" class="nav-link">HMTE Database</a></li>
+							<li><a href="#" class="nav-link">Profil</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -111,7 +119,33 @@
 					</article>
 				</div>
 			</section>
-			<aside>
+			<section id="emagz" class="emagz">
+				<div class="fade-in">
+					<h1 class="heading1">E-Magz</h1>
+					<p class="paragraph">Electrical Magazine</p>
+				</div>
+				<div class="emagz-slide fade-in">
+					<div class="container-gambar">
+						<a class="prev" onclick="plusSlides(-1)">❮</a>
+
+						<img src="img/emagz/page1.webp" class="gambar" />
+						<img src="img/emagz/page2.webp" class="gambar" />
+						<img src="img/emagz/page3.webp" class="gambar" />
+						<img src="img/emagz/page4.webp" class="gambar" />
+						<img src="img/emagz/page5.webp" class="gambar" />
+						<img src="img/emagz/page6.webp" class="gambar" />
+						<img src="img/emagz/page7.webp" class="gambar" />
+						<img src="img/emagz/page8.webp" class="gambar" />
+						<img src="img/emagz/page9.webp" class="gambar" />
+						<img src="img/emagz/page10.webp" class="gambar" />
+
+						<a class="next" onclick="plusSlides(1)">❯</a>
+					</div>
+
+					<div id="halamanAktif"></div>
+				</div>
+			</section>
+			<!-- <aside>
 				<img src="img/Profile.png" alt="Profile Amin" />
 				<div class="text-aside">
 					<h1>Build by</h1>
@@ -121,11 +155,12 @@
 						<p>Universitas Jenderal Soedirman</p>
 					</div>
 				</div>
-			</aside>
+			</aside> -->
 		</main>
 		<footer>
 			<p>Copyright &copy; HMTE Unsoed 2024 | Kabinet Ethera Mosaika</p>
 		</footer>
 	</body>
 	<script src="js/script.js"></script>
+	<script src="js/emagz.js"></script>
 </html>
