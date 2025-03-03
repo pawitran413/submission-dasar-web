@@ -4,10 +4,13 @@
 	box-sizing: border-box;
 }
 
+.text-white {
+	color: white;
+}
+
 body {
 	font-family: "Satoshi-Regular", sans-serif;
 	background-color: #161616;
-	color: white;
 }
 
 #header {
@@ -32,7 +35,6 @@ body {
 
 #header a {
 	text-decoration: none;
-	color: white;
 	z-index: 4;
 }
 
@@ -58,7 +60,6 @@ body {
 
 .nav-link {
 	text-decoration: none;
-	color: white;
 	margin: 0px 10px;
 	padding: 5px 5px;
 	border-bottom: 1px solid transparent;
@@ -86,12 +87,7 @@ body {
 .dropdown-menu li a {
 	margin: 7px 20px;
 	display: block;
-	color: white;
 	text-decoration: none;
-}
-
-.dropdown:hover .dropdown-menu {
-	display: block;
 }
 
 .main {
@@ -170,6 +166,7 @@ body {
 	display: -webkit-box;
 	-webkit-line-clamp: 5; /* Batasi hanya 3 baris */
 	-webkit-box-orient: vertical;
+	line-clamp: 5;
 	overflow: hidden;
 }
 /* 
@@ -222,10 +219,6 @@ main aside .text-aside {
 	align-items: center;
 }
 
-.emagz .emagz-slide #halamanAktif {
-	color: white;
-}
-
 .emagz .emagz-slide .container-gambar {
 	display: flex;
 	justify-content: center;
@@ -234,7 +227,6 @@ main aside .text-aside {
 
 .emagz .emagz-slide .container-gambar .prev,
 .next {
-	color: white;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 100px;
@@ -267,8 +259,26 @@ footer {
 	transform: translateY(0);
 }
 
+@media screen and (min-width: 1000px) {
+	.nav-drop {
+		text-decoration: none;
+		margin: 0px 10px;
+		padding: 5px 5px;
+		border-bottom: 1px solid transparent;
+		transition: all 0.3s ease;
+	}
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
+	.dropdown-menu li a {
+		margin: 7px 20px;
+		display: block;
+		color: white;
+		text-decoration: none;
+	}
+}
 /* TAB */
-@media screen and (min-width: 600px) and (max-width: 1000px) {
+@media screen and (min-width: 600px) and (max-width: 999px) {
 	.nav-contain {
 		top: -500px;
 		left: 0px;
@@ -320,6 +330,29 @@ footer {
 
 	.lineee.nav-open {
 		transform: translateY(-6px) rotate(45deg);
+	}
+
+	.dropdown-menu {
+		display: none; /* Awalnya disembunyikan */
+		position: relative;
+		background-color: #161616;
+		border: 1px solid transparent;
+		list-style: none;
+		border-radius: 5px;
+	}
+
+	.dropdown-menu li a {
+		margin: 3px 20px;
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		width: fit-content;
+	}
+
+	.dropdown-menu.show-dropdown {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	#home {
@@ -391,6 +424,29 @@ footer {
 		background-color: #161616;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.dropdown-menu {
+		display: none; /* Awalnya disembunyikan */
+		position: relative;
+		background-color: #161616;
+		border: 1px solid transparent;
+		list-style: none;
+		border-radius: 5px;
+	}
+
+	.dropdown-menu li a {
+		margin: 3px 20px;
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		width: fit-content;
+	}
+
+	.dropdown-menu.show-dropdown {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.nav-toggle {
