@@ -165,6 +165,8 @@ a {
 .card {
 	max-width: 330px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
+	/* background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px); */
 	border-radius: 10px;
 	padding: 10px;
 	display: flex;
