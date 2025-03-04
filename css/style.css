@@ -147,13 +147,14 @@ body {
 }
 
 #berita div {
-	width: 75vw;
 	text-align: center;
 }
 
 .card_container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 	gap: 20px;
 }
 
@@ -162,6 +163,7 @@ a {
 }
 
 .card {
+	max-width: 330px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	padding: 10px;
@@ -169,7 +171,6 @@ a {
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 10px;
-	flex-wrap: wrap;
 	transition: border 0.3s ease;
 }
 
@@ -281,6 +282,11 @@ footer {
 	transform: translateY(0);
 }
 
+/* NEWS DETAIL */
+.border {
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 @media screen and (min-width: 1000px) {
 	.nav-drop {
 		text-decoration: none;
@@ -310,11 +316,16 @@ footer {
 		height: 400px;
 		object-fit: cover;
 	}
+	.info {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.9em;
+	}
 	.news-heading {
 		font-size: 3em;
 	}
 	.news-paragraph {
 		font-size: 1.2em;
+		line-height: 1.55em;
 	}
 }
 /* TAB */
@@ -408,10 +419,6 @@ footer {
 		min-height: 40vh;
 	}
 
-	.card:last-child {
-		display: none;
-	}
-
 	.emagz {
 		justify-content: center;
 		text-align: center;
@@ -435,6 +442,17 @@ footer {
 		height: 230px;
 		object-fit: cover;
 	}
+	.info {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.9em;
+	}
+	.news-heading {
+		font-size: 3em;
+	}
+	.news-paragraph {
+		font-size: 1.2em;
+		line-height: 1.55em;
+	}
 }
 
 /* HANDPHONE */
@@ -445,17 +463,14 @@ footer {
 		align-items: center;
 		overflow-x: hidden;
 	}
-
 	#header {
 		width: 100vw;
 		height: 60px;
 		justify-content: center;
 	}
-
 	#header a h2 {
 		font-size: 1em;
 	}
-
 	.nav-contain {
 		top: -500px;
 		left: 0px;
@@ -464,12 +479,10 @@ footer {
 		width: 100vw;
 		transition: all 0.5s ease;
 	}
-
 	.nav-contain.nav-open {
 		opacity: 1;
 		top: 50px;
 	}
-
 	#nav_list {
 		flex-direction: column;
 		text-align: center;
@@ -479,7 +492,6 @@ footer {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 	}
-
 	.dropdown-menu {
 		display: none; /* Awalnya disembunyikan */
 		position: relative;
@@ -488,7 +500,6 @@ footer {
 		list-style: none;
 		border-radius: 5px;
 	}
-
 	.dropdown-menu li a {
 		margin: 3px 20px;
 		display: block;
@@ -496,13 +507,11 @@ footer {
 		text-decoration: none;
 		width: fit-content;
 	}
-
 	.dropdown-menu.show-dropdown {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-
 	.nav-toggle {
 		display: flex;
 		flex-direction: column;
@@ -510,7 +519,6 @@ footer {
 		background-color: transparent;
 		border: none;
 	}
-
 	.line,
 	.linee,
 	.lineee {
@@ -519,48 +527,38 @@ footer {
 		height: 2px;
 		transition: all 0.3s ease;
 	}
-
 	.line.nav-open {
 		transform: translateY(6px) rotate(-45deg);
 	}
-
 	.linee.nav-open {
 		opacity: 0;
 	}
-
 	.lineee.nav-open {
 		transform: translateY(-6px) rotate(45deg);
 	}
-
 	.main {
 		gap: 20px;
 		background-color: #161616;
 	}
-
 	#home {
 		justify-content: space-evenly;
 		min-height: 70vh;
 	}
-
 	#home div {
 		width: 80vw;
 		display: flex;
 		flex-direction: column;
 	}
-
 	.heading1 {
 		font-size: 2.2em;
 	}
-
 	.paragraph {
 		font-size: 1em;
 	}
-
 	#home img {
 		order: -1;
 		width: 50vw;
 	}
-
 	#berita div {
 		width: 80vw;
 		display: flex;
@@ -577,19 +575,15 @@ footer {
 		margin-top: 20px;
 		margin-bottom: 20px; /* kalo udah ada bawahnya, ilangin */
 	}
-
 	.emagz .teks-emagz a {
 		display: none;
 	}
-
 	.emagz .emagz-slide .container-gambar .prev {
 		padding-left: 30px;
 	}
-
 	.emagz .emagz-slide .container-gambar .next {
 		padding-right: 30px;
 	}
-
 	.emagz .emagz-slide .container-gambar img {
 		max-height: 70vh;
 	}
@@ -598,22 +592,14 @@ footer {
 		flex-direction: column;
 		gap: 15px;
 	}
-
 	footer {
 		width: 100vw;
 		margin-top: 30px;
 		padding: 0 20px;
 	}
-
 	.news-heading {
 		font-size: 2em;
 	}
-
-	.border {
-		padding-bottom: 10px;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	}
-
 	.container {
 		width: 90vw;
 		margin: 0px 0px 30px 0px;
@@ -621,7 +607,6 @@ footer {
 		flex-direction: column;
 		gap: 20px;
 	}
-
 	.container img {
 		position: relative;
 		width: 100vw;
@@ -630,7 +615,6 @@ footer {
 		height: 500px;
 		object-fit: cover;
 	}
-
 	.news-heading {
 		display: flex;
 		align-items: center;
@@ -641,13 +625,12 @@ footer {
 		padding: 0vw 5vw;
 		background-color: rgba(22, 22, 22, 0.5);
 	}
-
 	.info {
 		color: rgba(255, 255, 255, 0.7);
 		font-size: 0.8em;
 	}
-
 	.news-paragraph {
 		font-size: 1.1em;
+		line-height: 1.55em;
 	}
 }
